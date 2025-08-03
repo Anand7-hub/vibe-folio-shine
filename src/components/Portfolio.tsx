@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Twitter, Code, Trophy, Briefcase, GraduationCap, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -6,78 +6,126 @@ import { ThemeToggle } from "./ThemeToggle";
 import { SkillCard } from "./SkillCard";
 import { ProjectCard } from "./ProjectCard";
 import { CertificationCard } from "./CertificationCard";
+import { ContactForm } from "./ContactForm";
+import { useState } from "react";
 
 export function Portfolio() {
-  // Sample data - replace with your actual data
+  const [activeSection, setActiveSection] = useState("projects");
+
+  // Resume data based on the provided information
   const skills = [
     {
-      title: "Frontend",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "JavaScript"]
+      title: "Languages",
+      skills: ["C", "C++", "Python", "Java", "Dart", "Kotlin", "JavaScript"]
     },
     {
-      title: "Backend",
-      skills: ["Node.js", "Python", "Express", "MongoDB", "PostgreSQL"]
+      title: "Libraries & Frameworks",
+      skills: ["PyTorch", "OpenCV", "Scikit-Learn", "TensorFlow", "React", "Node.js"]
     },
     {
-      title: "Tools & Others",
-      skills: ["Git", "Docker", "AWS", "Figma", "VS Code"]
+      title: "Tech Stack",
+      skills: ["HTML", "CSS", "React", "Web3", "DApps", "MongoDB"]
+    },
+    {
+      title: "Tools & Cloud",
+      skills: ["GitHub", "VS Code", "AWS", "Docker", "Kubernetes", "Android Studio"]
+    },
+    {
+      title: "Expertise",
+      skills: ["Computer Vision", "Machine Learning", "Prompt Engineering", "Data Analytics"]
     }
   ];
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Socket.io"],
-      githubUrl: "https://github.com/yourusername/ecommerce",
-      liveUrl: "https://your-ecommerce.com"
+      title: "Optimized Predictive Modeling for YouTube Trends",
+      description: "Machine learning model to predict YouTube trending content by analyzing user behavior patterns and engagement factors.",
+      technologies: ["Python", "Machine Learning", "Data Analytics", "AI"],
+      githubUrl: "https://github.com/anandbalaji"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, team collaboration features, and analytics dashboard.",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind"],
-      githubUrl: "https://github.com/yourusername/taskapp",
-      liveUrl: "https://your-taskapp.com"
+      title: "PowerArmor Fitness – AI-Powered Smart Training",
+      description: "AI-powered fitness application with intelligent food and workout tracking system, featuring automated progress analysis.",
+      technologies: ["AI", "Flutter", "Mobile Development", "Data Analytics"],
+      githubUrl: "https://github.com/anandbalaji"
     },
     {
-      title: "Weather Analytics Dashboard",
-      description: "Data visualization dashboard displaying weather patterns and analytics with interactive charts and forecasting.",
-      technologies: ["React", "D3.js", "Python", "Flask", "Chart.js"],
-      githubUrl: "https://github.com/yourusername/weather-dashboard"
+      title: "Demat Direct – Smart Investment Portfolio",
+      description: "Java-powered investment platform with seamless account management, transaction handling, and dynamic UI transitions.",
+      technologies: ["Java", "Investment Platform", "UI/UX", "Backend"],
+      githubUrl: "https://github.com/anandbalaji"
+    }
+  ];
+
+  const experience = [
+    {
+      title: "Software Development Intern",
+      company: "Valeo India",
+      period: "May 2024 – Jun 2024",
+      description: "Developed AI solutions for automotive applications, focusing on computer vision and machine learning implementations.",
+      achievements: [
+        "Implemented AI techniques for Sun Glare Impact assessment",
+        "Co-authored patent for AI-based sunglare mitigation system",
+        "Collaborated with cross-functional teams to streamline IT processes"
+      ]
+    },
+    {
+      title: "Head of Sponsorships and Treasurer",
+      company: "NWC Association",
+      period: "Feb 2024 – Present",
+      description: "Leading sponsorship initiatives and financial strategy for the association.",
+      achievements: [
+        "Secured and managed sponsorships worth significant value",
+        "Enhanced financial strategy and provided strategic advice",
+        "Fostered long-term relationships for continued support"
+      ]
     }
   ];
 
   const certifications = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "Dec 2023",
-      status: "Completed" as const
+      title: "Oracle Cloud Infrastructure 2024",
+      issuer: "Oracle",
+      date: "2024",
+      status: "Completed" as const,
+      badgeText: "OCI",
+      credentialUrl: "https://oracle.com/certificates"
     },
     {
-      title: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      date: "Jan 2024",
-      status: "In Progress" as const
-    },
-    {
-      title: "Meta Frontend Developer Certificate",
-      issuer: "Meta",
-      date: "Nov 2023",
-      status: "Completed" as const
+      title: "Full Stack Bootcamp",
+      issuer: "Udemy",
+      date: "2024",
+      status: "Completed" as const,
+      badgeText: "FS",
+      credentialUrl: "https://udemy.com/certificates"
     }
   ];
 
   const achievements = [
-    "🏆 Winner of HackXYZ 2023 - Best Innovation Award",
-    "🎯 Contributed to 15+ open source projects with 500+ stars",
-    "📈 Led development team of 5 developers on enterprise project",
-    "🚀 Optimized application performance by 40% reducing load times"
+    "🏆 Runner-Up, National Level Blockchain Idea Fest (Jan 2025)",
+    "🎯 Presented innovative blockchain solutions with real-world applications",
+    "🚀 Developed AI-powered applications with significant user engagement",
+    "📈 Led cross-functional teams in enterprise-level projects"
+  ];
+
+  const sections = [
+    { id: "projects", label: "Projects", icon: Code },
+    { id: "experience", label: "Experience", icon: Briefcase },
+    { id: "certifications", label: "Certifications", icon: GraduationCap },
+    { id: "achievements", label: "Achievements", icon: Trophy }
   ];
 
   return (
     <div className="portfolio-container">
       <ThemeToggle />
+      
+      {/* Floating decorative elements */}
+      <div className="floating-element top-20 left-10 text-6xl">
+        <Headphones className="w-12 h-12 text-primary/20" />
+      </div>
+      <div className="floating-element top-40 right-20 text-4xl" style={{ animationDelay: "2s" }}>
+        <Code className="w-8 h-8 text-accent/30" />
+      </div>
       
       <div className="portfolio-split">
         {/* Left Side */}
@@ -85,39 +133,50 @@ export function Portfolio() {
           <div className="space-y-8">
             {/* Name and Socials */}
             <div className="opacity-0 animate-fade-in">
-              <div className="flex items-center justify-between mb-4">
-                <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                  Your Name
-                </h1>
-                <div className="flex space-x-3">
-                  <Button variant="ghost" size="icon" className="social-icon" asChild>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-5 h-5" />
-                    </a>
-                  </Button>
-                  <Button variant="ghost" size="icon" className="social-icon" asChild>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="w-5 h-5" />
-                    </a>
-                  </Button>
-                  <Button variant="ghost" size="icon" className="social-icon" asChild>
-                    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                      <Twitter className="w-5 h-5" />
-                    </a>
-                  </Button>
+              <div className="flex flex-col space-y-4">
+                <div className="flex items-center justify-between">
+                  <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                    Anand Balaji SN
+                  </h1>
+                  <div className="flex space-x-2">
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
+                      <a href="https://github.com/anandbalaji" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-5 h-5" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
+                      <a href="https://linkedin.com/in/anandbalaji" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
+                      <a href="https://leetcode.com/anandbalaji" target="_blank" rel="noopener noreferrer">
+                        <Code className="w-5 h-5" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
+                      <a href="https://twitter.com/anandbalaji" target="_blank" rel="noopener noreferrer">
+                        <Twitter className="w-5 h-5" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                <p className="text-xl text-muted-foreground">
+                  Vibe Coder & AI Engineer passionate about machine learning and full-stack development
+                </p>
+                <div className="flex items-center space-x-3 text-primary/60">
+                  <Headphones className="w-5 h-5 animate-float" />
+                  <span className="text-sm">Currently vibing to: Lo-fi beats while coding</span>
                 </div>
               </div>
-              <p className="text-xl text-muted-foreground">
-                Vibe Coder & Full-Stack Developer passionate about creating digital experiences
-              </p>
             </div>
 
             {/* Skills */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
-                Skills
+                Skills & Expertise
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {skills.map((skillGroup, index) => (
                   <SkillCard
                     key={skillGroup.title}
@@ -130,83 +189,120 @@ export function Portfolio() {
             </div>
           </div>
 
-          {/* Contact */}
-          <div className="space-y-4 opacity-0 animate-fade-in" style={{ animationDelay: "800ms" }}>
-            <h2 className="text-2xl font-bold text-foreground">Contact Me</h2>
-            <Card className="p-4 bg-secondary/20">
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors">
-                  <Mail className="w-4 h-4" />
-                  <span>your.email@example.com</span>
-                </div>
-                <div className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors">
-                  <MapPin className="w-4 h-4" />
-                  <span>New York, NY</span>
-                </div>
-              </div>
-            </Card>
-          </div>
+          {/* Contact Form */}
+          <ContactForm />
         </div>
 
         {/* Right Side */}
-        <div className="portfolio-right space-y-12">
-          {/* Projects */}
-          <section>
-            <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
-              Projects
-            </h2>
-            <div className="space-y-6">
-              {projects.map((project, index) => (
-                <ProjectCard
-                  key={project.title}
-                  {...project}
-                  delay={200 + index * 150}
-                />
-              ))}
+        <div className="portfolio-right">
+          {/* Navigation */}
+          <div className="sticky top-6 z-40 mb-8">
+            <div className="flex flex-wrap gap-2 p-2 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20">
+              {sections.map((section) => {
+                const Icon = section.icon;
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => setActiveSection(section.id)}
+                    className={`nav-tab ${activeSection === section.id ? 'active' : ''}`}
+                  >
+                    <Icon className="w-4 h-4 mr-2" />
+                    {section.label}
+                  </button>
+                );
+              })}
             </div>
-          </section>
+          </div>
 
-          <Separator />
+          {/* Content based on active section */}
+          <div className="space-y-12">
+            {activeSection === "projects" && (
+              <section>
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
+                  Featured Projects
+                </h2>
+                <div className="space-y-6">
+                  {projects.map((project, index) => (
+                    <ProjectCard
+                      key={project.title}
+                      {...project}
+                      delay={200 + index * 150}
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
 
-          {/* Certifications */}
-          <section>
-            <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
-              Certifications
-            </h2>
-            <div className="grid gap-4">
-              {certifications.map((cert, index) => (
-                <CertificationCard
-                  key={cert.title}
-                  {...cert}
-                  delay={600 + index * 100}
-                />
-              ))}
-            </div>
-          </section>
+            {activeSection === "experience" && (
+              <section>
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
+                  Professional Experience
+                </h2>
+                <div className="space-y-6">
+                  {experience.map((exp, index) => (
+                    <Card 
+                      key={exp.title}
+                      className="project-card opacity-0 animate-slide-up"
+                      style={{ animationDelay: `${200 + index * 150}ms` }}
+                    >
+                      <div className="space-y-4">
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
+                          <p className="text-lg text-primary font-medium">{exp.company}</p>
+                          <p className="text-sm text-muted-foreground">{exp.period}</p>
+                        </div>
+                        <p className="text-muted-foreground">{exp.description}</p>
+                        <ul className="space-y-2">
+                          {exp.achievements.map((achievement, i) => (
+                            <li key={i} className="flex items-start space-x-2">
+                              <span className="text-primary mt-1">•</span>
+                              <span className="text-foreground">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            )}
 
-          <Separator />
+            {activeSection === "certifications" && (
+              <section>
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
+                  Certifications & Learning
+                </h2>
+                <div className="space-y-4">
+                  {certifications.map((cert, index) => (
+                    <CertificationCard
+                      key={cert.title}
+                      {...cert}
+                      delay={600 + index * 100}
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
 
-          {/* Achievements */}
-          <section>
-            <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "800ms" }}>
-              Achievements
-            </h2>
-            <div className="space-y-4">
-              {achievements.map((achievement, index) => (
-                <Card 
-                  key={index}
-                  className="p-4 border-l-4 border-l-primary bg-secondary/20 opacity-0 animate-slide-up"
-                  style={{ animationDelay: `${1000 + index * 100}ms` }}
-                >
-                  <p className="text-foreground">{achievement}</p>
-                </Card>
-              ))}
-            </div>
-          </section>
+            {activeSection === "achievements" && (
+              <section>
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
+                  Achievements & Recognition
+                </h2>
+                <div className="space-y-4">
+                  {achievements.map((achievement, index) => (
+                    <Card 
+                      key={index}
+                      className="p-6 border-l-4 border-l-primary bg-card/80 backdrop-blur-sm opacity-0 animate-slide-up hover:shadow-lg transition-all duration-300"
+                      style={{ animationDelay: `${1000 + index * 100}ms` }}
+                    >
+                      <p className="text-foreground text-lg">{achievement}</p>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
         </div>
       </div>
     </div>
