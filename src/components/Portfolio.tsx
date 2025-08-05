@@ -1,4 +1,8 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter, Code, Trophy, Briefcase, GraduationCap, Headphones } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Code, Trophy, Briefcase, GraduationCap, Download } from "lucide-react";
+import youtubeTrendsImg from "@/assets/youtube-trends-project.jpg";
+import powerArmorImg from "@/assets/powerarmor-fitness-project.jpg";
+import dematDirectImg from "@/assets/demat-direct-project.jpg";
+import blockchainImg from "@/assets/blockchain-achievement.jpg";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -41,19 +45,22 @@ export function Portfolio() {
       title: "Optimized Predictive Modeling for YouTube Trends",
       description: "Machine learning model to predict YouTube trending content by analyzing user behavior patterns and engagement factors.",
       technologies: ["Python", "Machine Learning", "Data Analytics", "AI"],
-      githubUrl: "https://github.com/anandbalaji"
+      githubUrl: "https://github.com/anandbalaji",
+      image: youtubeTrendsImg
     },
     {
       title: "PowerArmor Fitness – AI-Powered Smart Training",
       description: "AI-powered fitness application with intelligent food and workout tracking system, featuring automated progress analysis.",
       technologies: ["AI", "Flutter", "Mobile Development", "Data Analytics"],
-      githubUrl: "https://github.com/anandbalaji"
+      githubUrl: "https://github.com/anandbalaji",
+      image: powerArmorImg
     },
     {
       title: "Demat Direct – Smart Investment Portfolio",
       description: "Java-powered investment platform with seamless account management, transaction handling, and dynamic UI transitions.",
       technologies: ["Java", "Investment Platform", "UI/UX", "Backend"],
-      githubUrl: "https://github.com/anandbalaji"
+      githubUrl: "https://github.com/anandbalaji",
+      image: dematDirectImg
     }
   ];
 
@@ -102,10 +109,26 @@ export function Portfolio() {
   ];
 
   const achievements = [
-    "🏆 Runner-Up, National Level Blockchain Idea Fest (Jan 2025)",
-    "🎯 Presented innovative blockchain solutions with real-world applications",
-    "🚀 Developed AI-powered applications with significant user engagement",
-    "📈 Led cross-functional teams in enterprise-level projects"
+    {
+      title: "🏆 Runner-Up, National Level Blockchain Idea Fest (Jan 2025)",
+      description: "Achieved runner-up position in prestigious national competition",
+      image: blockchainImg
+    },
+    {
+      title: "🎯 Presented innovative blockchain solutions with real-world applications",
+      description: "Showcased practical blockchain implementations for real-world problems",
+      image: blockchainImg
+    },
+    {
+      title: "🚀 Developed AI-powered applications with significant user engagement",
+      description: "Created AI applications that gained substantial user adoption",
+      image: powerArmorImg
+    },
+    {
+      title: "📈 Led cross-functional teams in enterprise-level projects",
+      description: "Successfully managed diverse teams in complex enterprise solutions",
+      image: dematDirectImg
+    }
   ];
 
   const sections = [
@@ -121,10 +144,10 @@ export function Portfolio() {
       
       {/* Floating decorative elements */}
       <div className="floating-element top-20 left-10 text-6xl">
-        <Headphones className="w-12 h-12 text-primary/20" />
+        <Code className="w-12 h-12 text-primary/20" />
       </div>
       <div className="floating-element top-40 right-20 text-4xl" style={{ animationDelay: "2s" }}>
-        <Code className="w-8 h-8 text-accent/30" />
+        <Github className="w-8 h-8 text-accent/30" />
       </div>
       
       <div className="portfolio-split">
@@ -133,12 +156,17 @@ export function Portfolio() {
           <div className="space-y-8">
             {/* Name and Socials */}
             <div className="opacity-0 animate-fade-in">
-              <div className="flex flex-col space-y-4">
-                <div className="flex items-center justify-between">
-                  <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              <div className="flex flex-col space-y-6">
+                <div>
+                  <h1 className="text-4xl lg:text-6xl font-bold name-shimmer mb-4">
                     Anand Balaji SN
                   </h1>
-                  <div className="flex space-x-2">
+                  <p className="text-xl text-muted-foreground mb-6">
+                    AI Engineer passionate about machine learning and full-stack development
+                  </p>
+                  
+                  {/* Social Links */}
+                  <div className="flex flex-wrap gap-3 mb-4">
                     <Button variant="ghost" size="icon" className="social-icon" asChild>
                       <a href="https://github.com/anandbalaji" target="_blank" rel="noopener noreferrer">
                         <Github className="w-5 h-5" />
@@ -154,29 +182,30 @@ export function Portfolio() {
                         <Code className="w-5 h-5" />
                       </a>
                     </Button>
-                    <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://twitter.com/anandbalaji" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                    </Button>
                   </div>
-                </div>
-                <p className="text-xl text-muted-foreground">
-                  Vibe Coder & AI Engineer passionate about machine learning and full-stack development
-                </p>
-                <div className="flex items-center space-x-3 text-primary/60">
-                  <Headphones className="w-5 h-5 animate-float" />
-                  <span className="text-sm">Currently vibing to: Lo-fi beats while coding</span>
+                  
+                  {/* Download Resume Button */}
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="border-primary/30 hover:bg-primary/10"
+                    asChild
+                  >
+                    <a href="/resume.pdf" download>
+                      <Download className="w-4 h-4 mr-2" />
+                      Resume
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
 
             {/* Skills */}
-            <div className="space-y-4">
+            <div className="space-y-6 mt-12">
               <h2 className="text-2xl font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 Skills & Expertise
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {skills.map((skillGroup, index) => (
                   <SkillCard
                     key={skillGroup.title}
@@ -190,7 +219,9 @@ export function Portfolio() {
           </div>
 
           {/* Contact Form */}
-          <ContactForm />
+          <div className="mt-12">
+            <ContactForm />
+          </div>
         </div>
 
         {/* Right Side */}
@@ -289,14 +320,26 @@ export function Portfolio() {
                 <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
                   Achievements & Recognition
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {achievements.map((achievement, index) => (
                     <Card 
                       key={index}
-                      className="p-6 border-l-4 border-l-primary bg-card/80 backdrop-blur-sm opacity-0 animate-slide-up hover:shadow-lg transition-all duration-300"
+                      className="project-card opacity-0 animate-slide-up overflow-hidden"
                       style={{ animationDelay: `${1000 + index * 100}ms` }}
                     >
-                      <p className="text-foreground text-lg">{achievement}</p>
+                      <div className="flex flex-col md:flex-row gap-6">
+                        <div className="w-full md:w-1/3 flex-shrink-0">
+                          <img 
+                            src={achievement.image} 
+                            alt={achievement.title}
+                            className="w-full h-48 object-cover rounded-lg"
+                          />
+                        </div>
+                        <div className="flex-1 space-y-4">
+                          <h3 className="text-xl font-bold text-foreground">{achievement.title}</h3>
+                          <p className="text-muted-foreground">{achievement.description}</p>
+                        </div>
+                      </div>
                     </Card>
                   ))}
                 </div>
