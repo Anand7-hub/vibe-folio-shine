@@ -9,7 +9,6 @@ interface ProjectCardProps {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
-  image: string;
   delay?: number;
 }
 
@@ -19,24 +18,14 @@ export function ProjectCard({
   technologies, 
   githubUrl, 
   liveUrl, 
-  image,
   delay = 0 
 }: ProjectCardProps) {
-  console.log('ProjectCard props:', { title, description, technologies, githubUrl, liveUrl, image, delay });
-  
   return (
     <Card 
       className="project-card opacity-0 animate-slide-up"
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="space-y-4">
-        <div className="relative overflow-hidden rounded-lg">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
-          />
-        </div>
         <div>
           <h3 className="text-xl font-bold text-foreground mb-2">{title}</h3>
           <p className="text-muted-foreground">{description}</p>
