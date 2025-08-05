@@ -22,6 +22,8 @@ export function ProjectCard({
   image,
   delay = 0 
 }: ProjectCardProps) {
+  console.log('ProjectCard props:', { title, description, technologies, githubUrl, liveUrl, image, delay });
+  
   return (
     <Card 
       className="project-card opacity-0 animate-slide-up"
