@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter, Code, Trophy, Briefcase, GraduationCap, Headphones } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Code, Trophy, Briefcase, GraduationCap, Headphones, Download, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -41,19 +41,22 @@ export function Portfolio() {
       title: "Optimized Predictive Modeling for YouTube Trends",
       description: "Machine learning model to predict YouTube trending content by analyzing user behavior patterns and engagement factors.",
       technologies: ["Python", "Machine Learning", "Data Analytics", "AI"],
-      githubUrl: "https://github.com/anandbalaji"
+      githubUrl: "https://github.com/anandbalaji",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop"
     },
     {
       title: "PowerArmor Fitness – AI-Powered Smart Training",
       description: "AI-powered fitness application with intelligent food and workout tracking system, featuring automated progress analysis.",
       technologies: ["AI", "Flutter", "Mobile Development", "Data Analytics"],
-      githubUrl: "https://github.com/anandbalaji"
+      githubUrl: "https://github.com/anandbalaji",
+      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=500&h=300&fit=crop"
     },
     {
       title: "Demat Direct – Smart Investment Portfolio",
       description: "Java-powered investment platform with seamless account management, transaction handling, and dynamic UI transitions.",
       technologies: ["Java", "Investment Platform", "UI/UX", "Backend"],
-      githubUrl: "https://github.com/anandbalaji"
+      githubUrl: "https://github.com/anandbalaji",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop"
     }
   ];
 
@@ -102,10 +105,24 @@ export function Portfolio() {
   ];
 
   const achievements = [
-    "🏆 Runner-Up, National Level Blockchain Idea Fest (Jan 2025)",
-    "🎯 Presented innovative blockchain solutions with real-world applications",
-    "🚀 Developed AI-powered applications with significant user engagement",
-    "📈 Led cross-functional teams in enterprise-level projects"
+    {
+      title: "Runner-Up, National Level Blockchain Idea Fest",
+      description: "Presented innovative blockchain solutions with real-world applications at national level competition",
+      date: "Jan 2025",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop"
+    },
+    {
+      title: "AI-Powered Applications Development",
+      description: "Developed multiple AI-powered applications with significant user engagement and real-world impact",
+      date: "2024",
+      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=500&h=300&fit=crop"
+    },
+    {
+      title: "Enterprise Team Leadership",
+      description: "Led cross-functional teams in enterprise-level projects, driving innovation and collaboration",
+      date: "2024",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop"
+    }
   ];
 
   const sections = [
@@ -132,42 +149,44 @@ export function Portfolio() {
         <div className="portfolio-left">
           <div className="space-y-8">
             {/* Name and Socials */}
-            <div className="opacity-0 animate-fade-in">
-              <div className="flex flex-col space-y-4">
-                <div className="flex items-center justify-between">
-                  <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                    Anand Balaji SN
-                  </h1>
-                  <div className="flex space-x-2">
-                    <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://github.com/anandbalaji" target="_blank" rel="noopener noreferrer">
-                        <Github className="w-5 h-5" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://linkedin.com/in/anandbalaji" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://leetcode.com/anandbalaji" target="_blank" rel="noopener noreferrer">
-                        <Code className="w-5 h-5" />
-                      </a>
-                    </Button>
-                    <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://twitter.com/anandbalaji" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+            <div className="opacity-0 animate-fade-in space-y-6">
+              <div className="space-y-4">
+                <h1 className="text-4xl lg:text-5xl font-bold name-animation whitespace-nowrap">
+                  Anand Balaji SN
+                </h1>
                 <p className="text-xl text-muted-foreground">
                   Vibe Coder & AI Engineer passionate about machine learning and full-stack development
                 </p>
-                <div className="flex items-center space-x-3 text-primary/60">
+                
+                <div className="vibe-element">
                   <Headphones className="w-5 h-5 animate-float" />
-                  <span className="text-sm">Currently vibing to: Lo-fi beats while coding</span>
+                  <span className="text-sm font-medium">Currently vibing to: Lo-fi beats while coding</span>
                 </div>
+                
+                <div className="flex flex-wrap gap-3">
+                  <Button variant="ghost" size="icon" className="social-icon" asChild>
+                    <a href="https://github.com/anandbalaji" target="_blank" rel="noopener noreferrer">
+                      <Github className="w-5 h-5" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="icon" className="social-icon" asChild>
+                    <a href="https://linkedin.com/in/anandbalaji" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </Button>
+                  <Button variant="ghost" size="icon" className="social-icon" asChild>
+                    <a href="https://leetcode.com/anandbalaji" target="_blank" rel="noopener noreferrer">
+                      <Code className="w-5 h-5" />
+                    </a>
+                  </Button>
+                </div>
+                
+                <Button className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 transition-all duration-300" asChild>
+                  <a href="/resume.pdf" download>
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Resume
+                  </a>
+                </Button>
               </div>
             </div>
 
@@ -197,7 +216,7 @@ export function Portfolio() {
         <div className="portfolio-right">
           {/* Navigation */}
           <div className="sticky top-6 z-40 mb-8">
-            <div className="flex flex-wrap gap-2 p-2 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20">
+            <div className="flex flex-wrap gap-3 p-4 bg-card border-2 border-border rounded-xl shadow-lg">
               {sections.map((section) => {
                 const Icon = section.icon;
                 return (
@@ -289,14 +308,35 @@ export function Portfolio() {
                 <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
                   Achievements & Recognition
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {achievements.map((achievement, index) => (
                     <Card 
                       key={index}
-                      className="p-6 border-l-4 border-l-primary bg-card/80 backdrop-blur-sm opacity-0 animate-slide-up hover:shadow-lg transition-all duration-300"
-                      style={{ animationDelay: `${1000 + index * 100}ms` }}
+                      className="project-card opacity-0 animate-slide-up"
+                      style={{ animationDelay: `${1000 + index * 150}ms` }}
                     >
-                      <p className="text-foreground text-lg">{achievement}</p>
+                      <div className="space-y-4">
+                        <div className="relative overflow-hidden rounded-lg">
+                          <img 
+                            src={achievement.image} 
+                            alt={achievement.title}
+                            className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                          />
+                          <div className="absolute top-4 right-4">
+                            <div className="bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                              {achievement.date}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <h3 className="text-xl font-bold text-foreground">{achievement.title}</h3>
+                          <p className="text-muted-foreground">{achievement.description}</p>
+                        </div>
+                        <div className="flex items-center text-primary">
+                          <Trophy className="w-5 h-5 mr-2" />
+                          <span className="font-medium">Achievement Unlocked</span>
+                        </div>
+                      </div>
                     </Card>
                   ))}
                 </div>
