@@ -49,21 +49,49 @@ export function Portfolio() {
       title: "Optimized Predictive Modeling for YouTube Trends Using Machine Learning",
       description: "Presented a research paper on a machine learning-based YouTube trend prediction system at ICIOT 2025, SRM Institute.",
       technologies: ["Python", "Machine Learning", "Research", "Data Analytics"],
-      githubUrl: "https://github.com/Anand7-hub",
+      githubUrl: "https://github.com/Anand7-hub/YouTube-Trends-ML",
       image: youtubeTrendsImg
     },
     {
       title: "TripMate AI",
       description: "React Native mobile app for AI-powered trip planning with personalized itineraries, real-time tracking, and RAG-based chatbot using LangChain and Gemini API.",
       technologies: ["React Native", "LangChain", "Gemini API", "RAG"],
-      githubUrl: "https://github.com/Anand7-hub",
+      githubUrl: "https://github.com/Anand7-hub/TripMate-AI",
       image: powerArmorImg
     },
     {
       title: "MedTechPro",
       description: "Predictive maintenance platform for healthcare equipment (MRI, CT) using AWS S3, Kinesis, Azure XGBoost with scalable microservices and ML pipelines.",
       technologies: ["AWS", "Azure", "XGBoost", "Microservices"],
-      githubUrl: "https://github.com/Anand7-hub",
+      githubUrl: "https://github.com/Anand7-hub/MedTechPro",
+      image: dematDirectImg
+    },
+    {
+      title: "Arena Control Panel",
+      description: "Web-based dashboard for managing, monitoring, and controlling activities within an arena environment with responsive UI and fast performance.",
+      technologies: ["TypeScript", "React", "Dashboard", "Real-time"],
+      githubUrl: "https://github.com/Anand7-hub/arena-control-panel",
+      image: blockchainImg
+    },
+    {
+      title: "SmartCampusParking",
+      description: "Automated parking management system for university campuses with real-time space monitoring, reservation, and location tracking to reduce congestion.",
+      technologies: ["TypeScript", "IoT", "Real-time", "Automation"],
+      githubUrl: "https://github.com/Anand7-hub/SmartCampusParking",
+      image: youtubeTrendsImg
+    },
+    {
+      title: "AI PR Review Agent",
+      description: "AI-powered Pull Request management tool combining traditional PR workflows with intelligent automation for code review and analysis.",
+      technologies: ["Python", "AI", "GitHub API", "Automation"],
+      githubUrl: "https://github.com/Anand7-hub/PR-Pull-Request-Review-Agent---Codemate-Hackathon",
+      image: powerArmorImg
+    },
+    {
+      title: "Disease Detection Using ML",
+      description: "Machine learning system for detecting plant diseases from leaf images with high accuracy image classification and diagnosis.",
+      technologies: ["Python", "TensorFlow", "Computer Vision", "ML"],
+      githubUrl: "https://github.com/Anand7-hub/Disease-Detection-Based-on-Leaf-image-Using-machine-learning",
       image: dematDirectImg
     }
   ];
@@ -233,9 +261,9 @@ export function Portfolio() {
             {/* Skills */}
             <div className="space-y-6 mt-16">
               <h2 className="text-2xl font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
-                Skills & Expertise
+                Skills
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {skills.map((skillGroup, index) => (
                   <SkillCard
                     key={skillGroup.title}
