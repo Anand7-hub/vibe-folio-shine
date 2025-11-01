@@ -1,7 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Award, Calendar, ExternalLink } from "lucide-react";
+import { Award } from "lucide-react";
 
 interface CertificationCardProps {
   title: string;
@@ -9,7 +7,7 @@ interface CertificationCardProps {
   date: string;
   status: "Completed" | "In Progress";
   badgeText?: string;
-  credentialUrl?: string;
+  image?: string;
   delay?: number;
 }
 
@@ -19,45 +17,42 @@ export function CertificationCard({
   date, 
   status, 
   badgeText,
-  credentialUrl,
+  image,
   delay = 0 
 }: CertificationCardProps) {
   return (
     <Card 
-      className="p-6 border border-primary/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 opacity-0 animate-scale-in bg-card/80 backdrop-blur-sm"
+      className="project-card opacity-0 animate-slide-up overflow-hidden"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="flex items-start space-x-4">
-        {badgeText ? (
-          <div className="cert-badge">
-            {badgeText}
-          </div>
-        ) : (
-          <Award className="w-8 h-8 text-primary mt-1" />
-        )}
-        <div className="flex-1">
-          <h4 className="font-semibold text-foreground text-lg">{title}</h4>
-          <p className="text-muted-foreground mb-3">{issuer}</p>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center text-sm text-muted-foreground">
-              <Calendar className="w-4 h-4 mr-2" />
-              {date}
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="w-full md:w-1/3 flex-shrink-0">
+          {image ? (
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-48 object-cover rounded-lg"
+            />
+          ) : (
+            <div className="w-full h-48 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+              <Award className="w-16 h-16 text-primary" />
             </div>
-            <div className="flex items-center gap-2">
-              <Badge 
-                variant={status === "Completed" ? "default" : "secondary"}
-                className="text-xs"
-              >
+          )}
+        </div>
+        
+        <div className="flex-1 space-y-3">
+          <div>
+            <h3 className="text-xl font-bold text-foreground mb-1">{title}</h3>
+            <p className="text-base text-primary font-medium">{issuer}</p>
+            <div className="flex items-center gap-3 mt-2">
+              <span className="text-sm text-muted-foreground">{date}</span>
+              <span className={`text-xs px-3 py-1 rounded-full ${
+                status === "Completed" 
+                  ? "bg-primary/20 text-primary" 
+                  : "bg-muted text-muted-foreground"
+              }`}>
                 {status}
-              </Badge>
-              {credentialUrl && status === "Completed" && (
-                <Button variant="outline" size="sm" asChild>
-                  <a href={credentialUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-3 h-3 mr-1" />
-                    Show Credential
-                  </a>
-                </Button>
-              )}
+              </span>
             </div>
           </div>
         </div>

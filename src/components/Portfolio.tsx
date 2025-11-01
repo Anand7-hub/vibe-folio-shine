@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Code, Trophy, Briefcase, GraduationCap, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Code, Trophy, Briefcase, GraduationCap, Download } from "lucide-react";
 import youtubeTrendsImg from "@/assets/youtube-trends-project.jpg";
 import powerArmorImg from "@/assets/powerarmor-fitness-project.jpg";
 import dematDirectImg from "@/assets/demat-direct-project.jpg";
@@ -19,47 +19,51 @@ export function Portfolio() {
   // Resume data based on the provided information
   const skills = [
     {
-      title: "Languages",
-      skills: ["C", "C++", "Python", "Java", "Dart", "Kotlin", "JavaScript"]
+      title: "Programming Languages",
+      skills: ["Java", "Python", "C++", "C"]
     },
     {
-      title: "Libraries & Frameworks",
-      skills: ["PyTorch", "OpenCV", "Scikit-Learn", "TensorFlow", "React", "Node.js"]
+      title: "Cloud Platforms",
+      skills: ["AWS", "Azure", "GCP"]
     },
     {
-      title: "Tech Stack",
-      skills: ["HTML", "CSS", "React", "Web3", "DApps", "MongoDB"]
+      title: "AI/ML",
+      skills: ["TensorFlow", "PyTorch", "U-Net", "XGBoost", "LangChain", "RAG", "Generative AI"]
     },
     {
-      title: "Tools & Cloud",
-      skills: ["GitHub", "VS Code", "AWS", "Docker", "Kubernetes", "Android Studio"]
+      title: "DevOps Tools",
+      skills: ["Docker", "Kubernetes", "Jenkins", "Terraform", "CI/CD", "Git"]
     },
     {
-      title: "Expertise",
-      skills: ["Computer Vision", "Machine Learning", "Prompt Engineering", "Data Analytics"]
+      title: "Web Development",
+      skills: ["React", "Tailwind", "Firebase", "Node.js"]
+    },
+    {
+      title: "Databases",
+      skills: ["SQL", "MongoDB"]
     }
   ];
 
   const projects = [
     {
-      title: "Optimized Predictive Modeling for YouTube Trends",
-      description: "Machine learning model to predict YouTube trending content by analyzing user behavior patterns and engagement factors.",
-      technologies: ["Python", "Machine Learning", "Data Analytics", "AI"],
-      githubUrl: "https://github.com/anandbalaji",
+      title: "Optimized Predictive Modeling for YouTube Trends Using Machine Learning",
+      description: "Presented a research paper on a machine learning-based YouTube trend prediction system at ICIOT 2025, SRM Institute.",
+      technologies: ["Python", "Machine Learning", "Research", "Data Analytics"],
+      githubUrl: "https://github.com/Anand7-hub",
       image: youtubeTrendsImg
     },
     {
-      title: "PowerArmor Fitness – AI-Powered Smart Training",
-      description: "AI-powered fitness application with intelligent food and workout tracking system, featuring automated progress analysis.",
-      technologies: ["AI", "Flutter", "Mobile Development", "Data Analytics"],
-      githubUrl: "https://github.com/anandbalaji",
+      title: "TripMate AI",
+      description: "React Native mobile app for AI-powered trip planning with personalized itineraries, real-time tracking, and RAG-based chatbot using LangChain and Gemini API.",
+      technologies: ["React Native", "LangChain", "Gemini API", "RAG"],
+      githubUrl: "https://github.com/Anand7-hub",
       image: powerArmorImg
     },
     {
-      title: "Demat Direct – Smart Investment Portfolio",
-      description: "Java-powered investment platform with seamless account management, transaction handling, and dynamic UI transitions.",
-      technologies: ["Java", "Investment Platform", "UI/UX", "Backend"],
-      githubUrl: "https://github.com/anandbalaji",
+      title: "MedTechPro",
+      description: "Predictive maintenance platform for healthcare equipment (MRI, CT) using AWS S3, Kinesis, Azure XGBoost with scalable microservices and ML pipelines.",
+      technologies: ["AWS", "Azure", "XGBoost", "Microservices"],
+      githubUrl: "https://github.com/Anand7-hub",
       image: dematDirectImg
     }
   ];
@@ -67,66 +71,101 @@ export function Portfolio() {
   const experience = [
     {
       title: "Software Development Intern",
-      company: "Valeo India",
-      period: "May 2024 – Jun 2024",
-      description: "Developed AI solutions for automotive applications, focusing on computer vision and machine learning implementations.",
+      company: "VALEO",
+      period: "May–June 2024",
+      description: "Worked on ADAS glare mitigation system using U-Net-based semantic segmentation to improve image clarity and object detection.",
       achievements: [
-        "Implemented AI techniques for Sun Glare Impact assessment",
-        "Co-authored patent for AI-based sunglare mitigation system",
-        "Collaborated with cross-functional teams to streamline IT processes"
+        "Developed U-Net-based semantic segmentation for glare mitigation",
+        "Performed end-to-end testing identifying performance issues",
+        "Reduced image error rates by 20% through optimized model validation"
       ]
     },
     {
-      title: "Head of Sponsorships and Treasurer",
-      company: "NWC Association",
-      period: "Feb 2024 – Present",
-      description: "Leading sponsorship initiatives and financial strategy for the association.",
+      title: "AWS Cloud Virtual Intern",
+      company: "AICTE",
+      period: "Jan–Mar 2025",
+      description: "Gained hands-on experience with AWS and DevOps tools for scalable cloud solutions and automation.",
       achievements: [
-        "Secured and managed sponsorships worth significant value",
-        "Enhanced financial strategy and provided strategic advice",
-        "Fostered long-term relationships for continued support"
+        "Worked with AWS services (EC2, S3, Lambda)",
+        "Learned DevOps tools for cloud automation",
+        "Built scalable cloud solutions"
+      ]
+    },
+    {
+      title: "The Consultant",
+      company: "NWC Association",
+      period: "Nov 2024–Present",
+      description: "Leading team management and organizational initiatives for technical events.",
+      achievements: [
+        "Led a team of 30 members organizing 7 major technical events",
+        "Managed 500+ participants across multiple events",
+        "Implemented digital documentation reducing admin time by 40%"
       ]
     }
   ];
 
   const certifications = [
     {
-      title: "Oracle Cloud Infrastructure 2024",
+      title: "Oracle Certified Foundations Associate",
       issuer: "Oracle",
       date: "2024",
       status: "Completed" as const,
       badgeText: "OCI",
-      credentialUrl: "https://oracle.com/certificates"
+      image: blockchainImg
     },
     {
-      title: "Full Stack Bootcamp",
-      issuer: "Udemy",
+      title: "Oracle Cloud Infrastructure 2024 Data Certified Foundations Associate",
+      issuer: "Oracle",
       date: "2024",
       status: "Completed" as const,
-      badgeText: "FS",
-      credentialUrl: "https://udemy.com/certificates"
+      badgeText: "OCI",
+      image: blockchainImg
+    },
+    {
+      title: "Google Data Analytics Certification",
+      issuer: "Google",
+      date: "2024",
+      status: "Completed" as const,
+      badgeText: "GDA",
+      image: blockchainImg
+    },
+    {
+      title: "AWS Cloud Foundations",
+      issuer: "AWS",
+      date: "2024",
+      status: "Completed" as const,
+      badgeText: "AWS",
+      image: blockchainImg
+    },
+    {
+      title: "AWS Machine Learning Foundations",
+      issuer: "AWS",
+      date: "2024",
+      status: "Completed" as const,
+      badgeText: "AWS",
+      image: blockchainImg
     }
   ];
 
   const achievements = [
     {
-      title: "🏆 Runner-Up, National Level Blockchain Idea Fest (Jan 2025)",
-      description: "Achieved runner-up position in prestigious national competition",
+      title: "Runner-Up, National Level Blockchain Idea Fest",
+      description: "Achieved runner-up position in prestigious national blockchain competition (Jan 2025)",
       image: blockchainImg
     },
     {
-      title: "🎯 Presented innovative blockchain solutions with real-world applications",
-      description: "Showcased practical blockchain implementations for real-world problems",
-      image: blockchainImg
-    },
-    {
-      title: "🚀 Developed AI-powered applications with significant user engagement",
-      description: "Created AI applications that gained substantial user adoption",
+      title: "Second Runner-Up, Mastering Cloud Services Project Expo",
+      description: "Secured second runner-up position showcasing cloud computing expertise (May 2025)",
       image: powerArmorImg
     },
     {
-      title: "📈 Led cross-functional teams in enterprise-level projects",
-      description: "Successfully managed diverse teams in complex enterprise solutions",
+      title: "Research Paper Presentation at ICIOT 2025",
+      description: "Presented research paper on YouTube Trends ML model at International Conference on IoT",
+      image: youtubeTrendsImg
+    },
+    {
+      title: "Multi-Cloud Certifications Achievement",
+      description: "Earned certifications across Oracle Cloud, AWS, and Google Cloud platforms",
       image: dematDirectImg
     }
   ];
@@ -142,13 +181,6 @@ export function Portfolio() {
     <div className="portfolio-container">
       <ThemeToggle />
       
-      {/* Floating decorative elements */}
-      <div className="floating-element top-20 left-10 text-6xl">
-        <Code className="w-12 h-12 text-primary/20" />
-      </div>
-      <div className="floating-element top-40 right-20 text-4xl" style={{ animationDelay: "2s" }}>
-        <Github className="w-8 h-8 text-accent/30" />
-      </div>
       
       <div className="portfolio-split">
         {/* Left Side */}
@@ -158,50 +190,48 @@ export function Portfolio() {
             <div className="opacity-0 animate-fade-in">
               <div className="flex flex-col space-y-6">
                 <div>
-                  <h1 className="text-4xl lg:text-6xl font-bold name-shimmer mb-4">
-                    Anand Balaji SN
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold name-shimmer mb-2 leading-tight whitespace-nowrap">
+                    Anand Balaji S N
                   </h1>
-                  <p className="text-xl text-muted-foreground mb-6">
-                    AI Engineer passionate about machine learning and full-stack development
+                  <p className="text-lg lg:text-xl text-muted-foreground mb-8">
+                    Cloud-Native AI/ML Engineer | DevOps Enthusiast
                   </p>
                   
-                  {/* Social Links */}
-                  <div className="flex flex-wrap gap-3 mb-4">
+                  {/* Social Links & Resume */}
+                  <div className="flex flex-wrap items-center gap-3">
                     <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://github.com/anandbalaji" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/Anand7-hub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <Github className="w-5 h-5" />
                       </a>
                     </Button>
                     <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://linkedin.com/in/anandbalaji" target="_blank" rel="noopener noreferrer">
+                      <a href="https://linkedin.com/in/anand-balaji-s-n" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <Linkedin className="w-5 h-5" />
                       </a>
                     </Button>
                     <Button variant="ghost" size="icon" className="social-icon" asChild>
-                      <a href="https://leetcode.com/anandbalaji" target="_blank" rel="noopener noreferrer">
-                        <Code className="w-5 h-5" />
+                      <a href="mailto:snanandbalaji07@gmail.com" aria-label="Email">
+                        <Mail className="w-5 h-5" />
+                      </a>
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="border-primary/30 hover:bg-primary/10 gap-2"
+                      asChild
+                    >
+                      <a href="/resume.pdf" download>
+                        <Download className="w-4 h-4" />
+                        Resume
                       </a>
                     </Button>
                   </div>
-                  
-                  {/* Download Resume Button */}
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="border-primary/30 hover:bg-primary/10"
-                    asChild
-                  >
-                    <a href="/resume.pdf" download>
-                      <Download className="w-4 h-4 mr-2" />
-                      Resume
-                    </a>
-                  </Button>
                 </div>
               </div>
             </div>
 
             {/* Skills */}
-            <div className="space-y-6 mt-12">
+            <div className="space-y-6 mt-16">
               <h2 className="text-2xl font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 Skills & Expertise
               </h2>

@@ -63,40 +63,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark theme - Dark shiny blue */
-    --background: 225 50% 5%;
-    --foreground: 210 100% 88%;
+    /* Dark theme - Premium Rolls Royce Dark Blue */
+    --background: 220 45% 8%;
+    --foreground: 210 40% 95%;
 
-    --card: 225 45% 8%;
-    --card-foreground: 210 100% 88%;
+    --card: 220 40% 12%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 225 45% 8%;
-    --popover-foreground: 210 100% 88%;
+    --popover: 220 40% 12%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 210 100% 70%;
-    --primary-foreground: 225 50% 5%;
+    --primary: 215 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 225 40% 12%;
-    --secondary-foreground: 210 100% 88%;
+    --secondary: 220 35% 16%;
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 225 40% 12%;
+    --muted: 220 35% 16%;
     --muted-foreground: 210 20% 65%;
 
-    --accent: 210 100% 88%;
-    --accent-foreground: 225 50% 5%;
+    --accent: 215 100% 60%;
+    --accent-foreground: 220 45% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 225 40% 15%;
-    --input: 225 40% 15%;
-    --ring: 210 100% 70%;
+    --border: 215 40% 20%;
+    --input: 215 40% 20%;
+    --ring: 215 100% 50%;
 
     /* Dark theme gradients and shadows */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 70%) 0%, hsl(210 100% 88%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(225 50% 5%) 0%, hsl(225 40% 8%) 100%);
-    --shadow-elegant: 0 10px 30px -10px hsl(210 100% 70% / 0.4);
-    --shadow-glow: 0 0 40px hsl(210 100% 88% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(215 100% 50%) 0%, hsl(215 100% 65%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 45% 8%) 0%, hsl(220 40% 12%) 100%);
+    --shadow-elegant: 0 10px 30px -10px hsl(215 100% 50% / 0.4);
+    --shadow-glow: 0 0 40px hsl(215 100% 60% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -132,21 +132,22 @@ All colors MUST be HSL.
   .portfolio-left {
     @apply w-full lg:w-2/5 p-6 lg:p-12 flex flex-col justify-between relative;
     background: var(--gradient-subtle);
-    border-right: 1px solid hsl(var(--border));
+    border-right: 2px solid hsl(var(--primary) / 0.3);
   }
 
   .portfolio-right {
     @apply w-full lg:w-3/5 p-6 lg:p-12 overflow-y-auto relative;
+    border-left: 2px solid hsl(var(--primary) / 0.2);
   }
 
 
   .project-card {
-    @apply p-6 bg-card/90 backdrop-blur-sm border-2 border-border/40 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary/60;
+    @apply p-6 bg-card/90 backdrop-blur-sm border-2 border-primary/30 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary/60;
     box-shadow: var(--shadow-elegant);
   }
 
   .skill-card {
-    @apply p-6 bg-card/80 backdrop-blur-sm border-2 border-border/40 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50;
+    @apply p-6 bg-card/80 backdrop-blur-sm border-2 border-primary/30 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50;
     box-shadow: var(--shadow-elegant);
   }
 
@@ -264,12 +265,16 @@ All colors MUST be HSL.
 }
 
 .name-shimmer {
-  background: linear-gradient(90deg, 
-    hsl(var(--foreground)) 25%, 
-    hsl(var(--primary)) 50%, 
-    hsl(var(--foreground)) 75%);
+  background: linear-gradient(
+    120deg,
+    hsl(var(--foreground)) 0%,
+    hsl(var(--primary)) 30%,
+    hsl(var(--accent)) 50%,
+    hsl(var(--primary)) 70%,
+    hsl(var(--foreground)) 100%
+  );
   background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 4s ease-in-out infinite;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
