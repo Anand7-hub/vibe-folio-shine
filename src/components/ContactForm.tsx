@@ -36,13 +36,13 @@ export function ContactForm() {
   };
 
   return (
-    <div className="space-y-4 opacity-0 animate-fade-in" style={{ animationDelay: "800ms" }}>
-      <h2 className="text-2xl font-bold text-foreground">Let's Connect</h2>
-      <Card className="p-4 md:p-6 bg-card/80 backdrop-blur-sm border-primary/20">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="name" className="flex items-center gap-2 text-sm">
-              <User className="w-4 h-4" />
+    <div className="space-y-3 opacity-0 animate-fade-in" style={{ animationDelay: "500ms" }}>
+      <h2 className="text-lg font-bold text-foreground">Let's Connect</h2>
+      <Card className="p-3 bg-card border border-primary/20">
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <div className="space-y-1.5">
+            <Label htmlFor="name" className="flex items-center gap-1.5 text-xs">
+              <User className="w-3 h-3" />
               Name
             </Label>
             <Input
@@ -51,13 +51,13 @@ export function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your full name"
-              className="border-primary/20 focus:border-primary"
+              className="border-primary/20 focus:border-primary h-8 text-sm bg-background"
             />
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="email" className="flex items-center gap-2 text-sm">
-              <Mail className="w-4 h-4" />
+          <div className="space-y-1.5">
+            <Label htmlFor="email" className="flex items-center gap-1.5 text-xs">
+              <Mail className="w-3 h-3" />
               Email
             </Label>
             <Input
@@ -67,30 +67,15 @@ export function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="your.email@example.com"
-              className="border-primary/20 focus:border-primary"
+              className="border-primary/20 focus:border-primary h-8 text-sm bg-background"
             />
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="phone" className="flex items-center gap-2 text-sm">
-              <Phone className="w-4 h-4" />
-              Phone (Optional)
-            </Label>
-            <Input
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="+1 (555) 123-4567"
-              className="border-primary/20 focus:border-primary"
-            />
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label className="flex items-center gap-2 text-sm">
-                <CalendarIcon className="w-4 h-4" />
-                Preferred Date
+          <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-1.5">
+              <Label className="flex items-center gap-1.5 text-xs">
+                <CalendarIcon className="w-3 h-3" />
+                Date
               </Label>
               <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
                 <DialogTrigger asChild>
@@ -98,19 +83,19 @@ export function ContactForm() {
                     type="button"
                     variant="outline"
                     className={cn(
-                      "w-full justify-start text-left font-normal border-primary/20 hover:border-primary",
+                      "w-full justify-start text-left font-normal border-primary/20 hover:border-primary h-8 text-xs bg-background",
                       !selectedDate && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {selectedDate ? format(selectedDate, "PPP") : <span>Pick a date</span>}
+                    <CalendarIcon className="mr-1.5 h-3 w-3" />
+                    {selectedDate ? format(selectedDate, "MMM d") : <span>Pick date</span>}
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] bg-card border-primary/20">
+                <DialogContent className="sm:max-w-[350px] bg-background border-primary/20">
                   <DialogHeader>
-                    <DialogTitle>Select a Date</DialogTitle>
+                    <DialogTitle className="text-sm">Select a Date</DialogTitle>
                   </DialogHeader>
-                  <div className="flex justify-center py-4">
+                  <div className="flex justify-center py-2">
                     <Calendar
                       mode="single"
                       selected={selectedDate}
@@ -127,33 +112,29 @@ export function ContactForm() {
               </Dialog>
             </div>
             
-            <div className="space-y-2">
-              <Label className="flex items-center gap-2 text-sm">
-                <Clock className="w-4 h-4" />
-                Preferred Time
+            <div className="space-y-1.5">
+              <Label className="flex items-center gap-1.5 text-xs">
+                <Clock className="w-3 h-3" />
+                Time
               </Label>
               <Select onValueChange={(value) => setFormData({...formData, preferredTime: value})}>
-                <SelectTrigger className="border-primary/20 hover:border-primary bg-card">
-                  <SelectValue placeholder="Select time" />
+                <SelectTrigger className="border-primary/20 hover:border-primary bg-background h-8 text-xs">
+                  <SelectValue placeholder="Select" />
                 </SelectTrigger>
-                <SelectContent className="bg-card border-primary/20">
+                <SelectContent className="bg-background border-primary/20">
                   <SelectItem value="9:00">9:00 AM</SelectItem>
                   <SelectItem value="10:00">10:00 AM</SelectItem>
                   <SelectItem value="11:00">11:00 AM</SelectItem>
-                  <SelectItem value="12:00">12:00 PM</SelectItem>
-                  <SelectItem value="13:00">1:00 PM</SelectItem>
                   <SelectItem value="14:00">2:00 PM</SelectItem>
-                  <SelectItem value="15:00">3:00 PM</SelectItem>
                   <SelectItem value="16:00">4:00 PM</SelectItem>
-                  <SelectItem value="17:00">5:00 PM</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="message" className="flex items-center gap-2 text-sm">
-              <MessageSquare className="w-4 h-4" />
+          <div className="space-y-1.5">
+            <Label htmlFor="message" className="flex items-center gap-1.5 text-xs">
+              <MessageSquare className="w-3 h-3" />
               Message
             </Label>
             <Textarea
@@ -161,14 +142,14 @@ export function ContactForm() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell me about your project or what you'd like to discuss..."
-              className="border-primary/20 focus:border-primary min-h-[100px] resize-none"
+              placeholder="Tell me about your project..."
+              className="border-primary/20 focus:border-primary min-h-[60px] resize-none text-sm bg-background"
             />
           </div>
           
           <Button 
             type="submit" 
-            className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 transition-all duration-300 shadow-lg"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 h-8 text-sm font-medium"
           >
             Schedule a Call
           </Button>
