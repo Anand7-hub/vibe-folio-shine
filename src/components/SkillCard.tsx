@@ -12,13 +12,13 @@ export function SkillCard({ title, skills, delay = 0 }: SkillCardProps) {
       className="skill-card opacity-0 animate-fade-in group"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <h3 className="font-semibold mb-2 text-foreground/90 text-xs uppercase tracking-wide">{title}</h3>
-      <div className="flex flex-wrap gap-1.5">
+      <h3 className="font-bold mb-3 text-foreground/90 text-sm uppercase tracking-wider">{title}</h3>
+      <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
           <span
             key={skill}
-            className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded transition-all duration-300 hover:bg-primary hover:text-primary-foreground border border-primary/20 hover:border-primary/50"
-            style={{ animationDelay: `${delay + index * 30}ms` }}
+            className="px-4 py-1.5 bg-gradient-to-r from-primary/15 to-accent/15 text-primary text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:from-primary hover:to-accent hover:text-primary-foreground hover:shadow-lg border border-primary/20 hover:border-primary/50"
+            style={{ animationDelay: `${delay + index * 50}ms` }}
           >
             {skill}
           </span>

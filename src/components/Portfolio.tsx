@@ -205,58 +205,51 @@ export function Portfolio() {
     { id: "achievements", label: "Achievements", icon: Trophy }
   ];
 
-  const education = [
-    {
-      degree: "B.Tech in Information Technology",
-      institution: "SRM Institute of Science and Technology, Chennai",
-      period: "2022–2026"
-    }
-  ];
-
   return (
     <div className="portfolio-container">
       <ThemeToggle />
       
+      
       <div className="portfolio-split">
         {/* Left Side */}
-        <div className="portfolio-left border-r border-border">
-          <div className="space-y-5">
+        <div className="portfolio-left">
+          <div className="space-y-8">
             {/* Name and Socials */}
             <div className="opacity-0 animate-fade-in">
-              <div className="flex flex-col space-y-3">
+              <div className="flex flex-col space-y-6">
                 <div>
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold name-shimmer mb-1 leading-tight">
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold name-shimmer mb-2 leading-tight whitespace-nowrap">
                     Anand Balaji S N
                   </h1>
-                  <p className="text-sm lg:text-base text-muted-foreground mb-4">
+                  <p className="text-lg lg:text-xl text-muted-foreground mb-8">
                     Cloud-Native AI/ML Engineer | DevOps Enthusiast
                   </p>
                   
                   {/* Social Links & Resume */}
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Button variant="ghost" size="sm" className="social-icon h-8 w-8 p-0" asChild>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
                       <a href="https://github.com/Anand7-hub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <Github className="w-4 h-4" />
+                        <Github className="w-5 h-5" />
                       </a>
                     </Button>
-                    <Button variant="ghost" size="sm" className="social-icon h-8 w-8 p-0" asChild>
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
                       <a href="https://linkedin.com/in/anand-balaji-s-n" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <Linkedin className="w-4 h-4" />
+                        <Linkedin className="w-5 h-5" />
                       </a>
                     </Button>
-                    <Button variant="ghost" size="sm" className="social-icon h-8 w-8 p-0" asChild>
+                    <Button variant="ghost" size="icon" className="social-icon" asChild>
                       <a href="mailto:snanandbalaji07@gmail.com" aria-label="Email">
-                        <Mail className="w-4 h-4" />
+                        <Mail className="w-5 h-5" />
                       </a>
                     </Button>
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="border-primary/30 hover:bg-primary/10 gap-1.5 h-8 text-xs"
+                      className="border-primary/30 hover:bg-primary/10 gap-2"
                       asChild
                     >
                       <a href="/resume.pdf" download>
-                        <Download className="w-3 h-3" />
+                        <Download className="w-4 h-4" />
                         Resume
                       </a>
                     </Button>
@@ -265,36 +258,18 @@ export function Portfolio() {
               </div>
             </div>
 
-            {/* Education */}
-            <div className="space-y-3">
-              <h2 className="text-lg font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "150ms" }}>
-                Education
-              </h2>
-              {education.map((edu, index) => (
-                <Card 
-                  key={index}
-                  className="p-3 bg-card/80 border border-primary/20 opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${200 + index * 100}ms` }}
-                >
-                  <h3 className="text-sm font-semibold text-foreground">{edu.degree}</h3>
-                  <p className="text-xs text-muted-foreground">{edu.institution}</p>
-                  <p className="text-xs text-primary">{edu.period}</p>
-                </Card>
-              ))}
-            </div>
-
             {/* Skills */}
-            <div className="space-y-3">
-              <h2 className="text-lg font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "250ms" }}>
+            <div className="space-y-6 mt-16">
+              <h2 className="text-2xl font-bold text-foreground opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 Skills
               </h2>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {skills.map((skillGroup, index) => (
                   <SkillCard
                     key={skillGroup.title}
                     title={skillGroup.title}
                     skills={skillGroup.skills}
-                    delay={300 + index * 50}
+                    delay={300 + index * 100}
                   />
                 ))}
               </div>
@@ -302,16 +277,16 @@ export function Portfolio() {
           </div>
 
           {/* Contact Form */}
-          <div className="mt-6">
+          <div className="mt-12">
             <ContactForm />
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="portfolio-right border-l border-border">
+        <div className="portfolio-right">
           {/* Navigation */}
-          <div className="sticky top-4 z-40 mb-6">
-            <div className="flex flex-wrap gap-1.5 p-1.5 bg-card/90 backdrop-blur-sm rounded-lg border border-primary/20">
+          <div className="sticky top-6 z-40 mb-8">
+            <div className="flex flex-wrap gap-2 p-2 bg-card/80 backdrop-blur-sm rounded-xl border border-primary/20">
               {sections.map((section) => {
                 const Icon = section.icon;
                 return (
@@ -320,7 +295,7 @@ export function Portfolio() {
                     onClick={() => setActiveSection(section.id)}
                     className={`nav-tab ${activeSection === section.id ? 'active' : ''}`}
                   >
-                    <Icon className="w-3.5 h-3.5 mr-1.5" />
+                    <Icon className="w-4 h-4 mr-2" />
                     {section.label}
                   </button>
                 );
@@ -329,18 +304,18 @@ export function Portfolio() {
           </div>
 
           {/* Content based on active section */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {activeSection === "projects" && (
               <section>
-                <h2 className="text-xl font-bold text-foreground mb-4 opacity-0 animate-fade-in">
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
                   Featured Projects
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {projects.map((project, index) => (
                     <ProjectCard
                       key={project.title}
                       {...project}
-                      delay={200 + index * 100}
+                      delay={200 + index * 150}
                     />
                   ))}
                 </div>
@@ -349,27 +324,27 @@ export function Portfolio() {
 
             {activeSection === "experience" && (
               <section>
-                <h2 className="text-xl font-bold text-foreground mb-4 opacity-0 animate-fade-in">
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
                   Professional Experience
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {experience.map((exp, index) => (
                     <Card 
                       key={exp.title}
                       className="project-card opacity-0 animate-slide-up"
-                      style={{ animationDelay: `${200 + index * 100}ms` }}
+                      style={{ animationDelay: `${200 + index * 150}ms` }}
                     >
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         <div>
-                          <h3 className="text-base font-bold text-foreground">{exp.title}</h3>
-                          <p className="text-sm text-primary font-medium">{exp.company}</p>
-                          <p className="text-xs text-muted-foreground">{exp.period}</p>
+                          <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
+                          <p className="text-lg text-primary font-medium">{exp.company}</p>
+                          <p className="text-sm text-muted-foreground">{exp.period}</p>
                         </div>
-                        <p className="text-sm text-muted-foreground">{exp.description}</p>
-                        <ul className="space-y-1">
+                        <p className="text-muted-foreground">{exp.description}</p>
+                        <ul className="space-y-2">
                           {exp.achievements.map((achievement, i) => (
-                            <li key={i} className="flex items-start space-x-2 text-sm">
-                              <span className="text-primary mt-0.5">•</span>
+                            <li key={i} className="flex items-start space-x-2">
+                              <span className="text-primary mt-1">•</span>
                               <span className="text-foreground">{achievement}</span>
                             </li>
                           ))}
@@ -383,15 +358,15 @@ export function Portfolio() {
 
             {activeSection === "certifications" && (
               <section>
-                <h2 className="text-xl font-bold text-foreground mb-4 opacity-0 animate-fade-in">
-                  Certifications
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
+                  Certifications & Learning
                 </h2>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {certifications.map((cert, index) => (
                     <CertificationCard
                       key={cert.title}
                       {...cert}
-                      delay={400 + index * 80}
+                      delay={600 + index * 100}
                     />
                   ))}
                 </div>
@@ -400,27 +375,27 @@ export function Portfolio() {
 
             {activeSection === "achievements" && (
               <section>
-                <h2 className="text-xl font-bold text-foreground mb-4 opacity-0 animate-fade-in">
-                  Achievements
+                <h2 className="text-3xl font-bold text-foreground mb-6 opacity-0 animate-fade-in">
+                  Achievements & Recognition
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {achievements.map((achievement, index) => (
                     <Card 
                       key={index}
                       className="project-card opacity-0 animate-slide-up overflow-hidden"
-                      style={{ animationDelay: `${600 + index * 80}ms` }}
+                      style={{ animationDelay: `${1000 + index * 100}ms` }}
                     >
-                      <div className="flex flex-col md:flex-row gap-4">
-                        <div className="w-full md:w-1/4 flex-shrink-0">
+                      <div className="flex flex-col md:flex-row gap-6">
+                        <div className="w-full md:w-1/3 flex-shrink-0">
                           <img 
                             src={achievement.image} 
                             alt={achievement.title}
-                            className="w-full h-32 object-cover rounded-md"
+                            className="w-full h-48 object-cover rounded-lg"
                           />
                         </div>
-                        <div className="flex-1 space-y-2">
-                          <h3 className="text-base font-bold text-foreground">{achievement.title}</h3>
-                          <p className="text-sm text-muted-foreground">{achievement.description}</p>
+                        <div className="flex-1 space-y-4">
+                          <h3 className="text-xl font-bold text-foreground">{achievement.title}</h3>
+                          <p className="text-muted-foreground">{achievement.description}</p>
                         </div>
                       </div>
                     </Card>
