@@ -130,25 +130,26 @@ All colors MUST be HSL.
   }
 
   .portfolio-left {
-    @apply w-full lg:w-2/5 p-4 sm:p-6 lg:p-12 flex flex-col justify-between relative;
+    @apply w-full lg:w-2/5 p-4 sm:p-5 lg:p-8 flex flex-col justify-between relative;
     background: var(--gradient-subtle);
-    border-right: 2px solid hsl(var(--primary) / 0.3);
+    border-right: 1px solid hsl(var(--border));
+    box-shadow: 1px 0 0 hsl(var(--primary) / 0.15);
   }
 
   .portfolio-right {
-    @apply w-full lg:w-3/5 p-4 sm:p-6 lg:p-12 overflow-y-auto relative;
-    border-left: 2px solid hsl(var(--primary) / 0.2);
+    @apply w-full lg:w-3/5 p-4 sm:p-5 lg:p-8 overflow-y-auto relative;
+    border-left: 1px solid hsl(var(--border));
+    box-shadow: -1px 0 0 hsl(var(--primary) / 0.15);
   }
 
-
   .project-card {
-    @apply p-6 bg-card/90 backdrop-blur-sm border-2 border-primary/30 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary/60;
+    @apply p-4 bg-card/90 backdrop-blur-sm border border-primary/20 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/40;
     box-shadow: var(--shadow-elegant);
   }
 
   .skill-card {
-    @apply p-5 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-md border border-primary/40 rounded-2xl transition-all duration-500;
-    box-shadow: var(--shadow-elegant), 0 0 0 1px hsl(var(--primary) / 0.1) inset;
+    @apply p-3 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-md border border-primary/30 rounded-lg transition-all duration-500;
+    box-shadow: 0 2px 8px hsl(var(--primary) / 0.08);
     position: relative;
     overflow: hidden;
   }
@@ -160,14 +161,14 @@ All colors MUST be HSL.
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.08), transparent);
     transition: left 0.5s;
   }
   
   .skill-card:hover {
-    transform: translateY(-4px);
-    border-color: hsl(var(--primary) / 0.7);
-    box-shadow: var(--shadow-glow), 0 0 0 1px hsl(var(--primary) / 0.2) inset;
+    transform: translateY(-2px);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 4px 16px hsl(var(--primary) / 0.15);
   }
   
   .skill-card:hover::before {
@@ -184,11 +185,11 @@ All colors MUST be HSL.
   }
 
   .nav-tab {
-    @apply px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer flex items-center;
+    @apply px-3 py-1.5 rounded-md transition-all duration-300 cursor-pointer flex items-center text-sm;
   }
 
   .nav-tab.active {
-    @apply bg-primary text-primary-foreground shadow-lg;
+    @apply bg-primary text-primary-foreground shadow-md;
   }
 
   .nav-tab:not(.active) {
@@ -196,7 +197,7 @@ All colors MUST be HSL.
   }
 
   .cert-badge {
-    @apply w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold shadow-lg;
+    @apply w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-bold shadow-md text-sm;
   }
 
   .animate-fade-in {
